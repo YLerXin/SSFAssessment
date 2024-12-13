@@ -23,7 +23,7 @@ RUN chmod a+x ./mvnw && ./mvnw package -Dmaven.test.skip=true
 #How to run the application
 #ENV SERVER_PORT=8080
 ENV PORT=3000
-ENV SERVER_PORT={SERVER_PORT}
+ENV SERVER_PORT=3000
 
 ENV NOTICEBOARD_DB_HOST=localhost
 
@@ -46,9 +46,9 @@ ARG WORK_DIR=/app
 
 WORKDIR ${WORK_DIR}
 
-COPY --from=builder /compiledir/target/day20-0.0.1-SNAPSHOT.jar day20.jar
+COPY --from=builder /compiledir/target/noticeboard-0.0.1-SNAPSHOT.jar day20.jar
 
-RUN apt update && apt install -y curl
+#RUN apt update && apt install -y curl
 
 #ENV SERVER_PORT=8080
 ENV PORT=3000
