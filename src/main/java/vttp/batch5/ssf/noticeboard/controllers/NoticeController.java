@@ -62,6 +62,7 @@ public class NoticeController {
         request.getHeader("Accept").contains("application/json");
         if (result.hasErrors()) {
             if (wantJson){
+                //return "notice"
                 Map<String,Object> errorRes = new HashMap<>();
                 errorRes.put("errorMessage", "Validation errors occurred");
                 errorRes.put("timestamps", System.currentTimeMillis());
